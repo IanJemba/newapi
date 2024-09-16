@@ -13,11 +13,17 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
+            $table->string('plate_number');
+
+            $table->string('brand');
+            $table->string('model');
+            $table->string('year');
+            $table->string('color');
+            $table->string('type');
+            $table->string('fuel');
 
             $table->foreignId('user_id')->constrained();
-            $table->string('plate_number');
             $table->softDeletes();
-
         });
     }
 
