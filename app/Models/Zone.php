@@ -11,6 +11,6 @@ class Zone extends Model
 
     protected $fillable = [
         'name',
-        'price-per-hour'
+        'price_per_hour'
     ];
 }
