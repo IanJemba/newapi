@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ParkingController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\ZoneController;
 use Illuminate\Http\Request;
@@ -12,5 +13,9 @@ Route::get('/user', function (Request $request) {
 
 Route::get('zones', [ZoneController::class, 'index']);
 Route::get('zones/{zone}', [ZoneController::class, 'show']);
+
 Route::get('vehicles', [VehicleController::class, 'index']);
 Route::get('vehicles/{vehicle}', [VehicleController::class, 'show']);
+
+Route::get('parking', [ParkingController::class, 'index']);
+Route::get('parking/{parking}', [ParkingController::class, 'show']);

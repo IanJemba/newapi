@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ParkingResource;
 use App\Http\Resources\VehicleResource;
+use App\Models\Parking;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
-class VehicleController extends Controller
+class ParkingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // return Vehicle::all();
+        // return Parking::all();
         return VehicleResource::collection(Vehicle::all());
     }
 
@@ -36,10 +38,9 @@ class VehicleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Vehicle $vehicle)
+    public function show(Parking $parking)
     {
-        // return $vehicle;
-        return new VehicleResource($vehicle);
+        return new ParkingResource($parking);
     }
 
     /**
