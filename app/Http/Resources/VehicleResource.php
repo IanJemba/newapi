@@ -16,6 +16,13 @@ class VehicleResource extends JsonResource
     {
         return parent::toArray($request);
 
-        
+        return [
+            'id'    => $this->id,
+            'brand' => $this->brand,
+            'model' => $this->model,
+            // 'year'  => $this->year,
+            // 'color' => $this->color,
+            // 'type'  => $this->type,
+        ];
     }
 }

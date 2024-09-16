@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ZoneResource;
 use App\Models\Zone;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class ZoneController extends Controller
      */
     public function index()
     {
-        return Zone::all();
+        return ZoneResource::collection(Zone::all());
     }
 
     /**
@@ -36,7 +37,7 @@ class ZoneController extends Controller
      */
     public function show(Zone $zone)
     {
-        return $zone;
+        return new ZoneResource($zone);
     }
 
     /**
